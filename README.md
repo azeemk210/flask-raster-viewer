@@ -62,7 +62,7 @@ After upload:
 
 > !## 📸 Screenshot
 
-![Map Viewer Screenshot](D:\QGIS\geoapp\image.png)
+![Map Viewer Screenshot](image.png)
 
 ---
 
