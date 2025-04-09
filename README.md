@@ -60,7 +60,9 @@ After upload:
 
 ## 📸 Screenshot
 
-> ![alt text](image.png)
+> !## 📸 Screenshot
+
+![Map Viewer Screenshot](D:\QGIS\geoapp\image.png)
 
 ---
 
