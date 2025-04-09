@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GeoTIFF Viewer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    html, body, #map { height: 100%; margin: 0; }
+    .leaflet-control-layers {
+      background-color: white;
+      padding: 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([47.8, 13.03], 13);
+    const baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const bounds = {{ bounds|tojson }};
+    const imageUrl = "/uploads/{{ raster_file }}";
+    const overlay = L.imageOverlay(imageUrl, bounds);
+
+    // Add to map and control
+    const overlays = {
+      "{{ raster_file }}": overlay
+    };
+    overlay.addTo(map);
+    map.fitBounds(bounds);
+
+    L.control.layers(null, overlays, { collapsed: false }).addTo(map);
+  </script>
+</body>
+</html>

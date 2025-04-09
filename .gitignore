@@ -1,0 +1,5 @@
+# Ignore setup.txt
+setup.txt
+
+# Ignore all uploaded raster files
+uploads/
