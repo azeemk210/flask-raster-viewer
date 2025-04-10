@@ -32,8 +32,6 @@ cd flask-raster-viewer
 conda env create -f environment.yml
 conda activate geoapp
 ```
-pip install -r requirements.txt
-```
 
 ### 3. Run the app
 
